@@ -16,9 +16,9 @@
     </header>
 
     <!-- Main structure -->
-    <main>
+    <main class="main">
       <div class="inventory-container">
-        <div class="tools-container">
+        <div class="inventory-container__tools">
           <div class="inventory-actions">
             <button
               class="inventory-actions__button inventory-actions__button--add"
@@ -28,19 +28,21 @@
           </div>
         </div>
 
-        <div class="inventory">
-          <table class="inventory__table">
+        <h2 class="inventory-container__title">Inventory List</h2>
+
+        <div class="inventory-container__inventory">
+          <table class="inventory-table">
             <thead>
-              <tr>
-                <th>Product ID</th>
-                <th>Product Name</th>
-                <th>Manufacturer</th>
-                <th>Expiration Date</th>
-                <th>Quantity</th>
-                <th>Actions</th>
+              <tr class="inventory-table__row">
+                <th class="inventory-table__header">Product ID</th>
+                <th class="inventory-table__header">Product Name</th>
+                <th class="inventory-table__header">Manufacturer</th>
+                <th class="inventory-table__header">Expiration Date</th>
+                <th class="inventory-table__header">Quantity</th>
+                <th class="inventory-table__header">Actions</th>
               </tr>
             </thead>
-            <tbody id="inventoryList">
+            <tbody class="inventory-table__body">
               <!-- Medicine items will be dynamically added here -->
             </tbody>
           </table>
@@ -50,55 +52,59 @@
 
     <!-- Structure for the form -->
     <div class="form-modal">
-      <form class="form" id="medicineForm">
-        <div class="form__group">
-          <label for="productName">Product Name</label>
+      <form class="form-modal__form">
+        <div class="form-modal__group">
+          <label class="form-modal__label" for="productName"
+            >Product Name</label
+          >
           <input
             type="text"
             name="productName"
-            id="productName"
+            class="form-modal__input form-modal__input--product-name"
             placeholder="Enter medicine name"
             maxlength="100"
-            class="form__input"
             required
           />
         </div>
-        <div class="form__group">
-          <label for="manufacturer">Manufacturer</label>
+        <div class="form-modal__group">
+          <label class="form-modal__label" for="manufacturer"
+            >Manufacturer</label
+          >
           <input
             type="text"
             name="manufacturer"
-            id="manufacturer"
+            class="form-modal__input form-modal__input--manufacturer"
             placeholder="Enter manufacturer name"
             maxlength="100"
-            class="form__input"
             required
           />
         </div>
-        <div class="form__group">
-          <label for="expirationDate">Expiration Date (ISO 8601)</label>
+        <div class="form-modal__group">
+          <label class="form-modal__label" for="expirationDate"
+            >Expiration Date (ISO 8601)</label
+          >
           <input
             type="date"
             name="expirationDate"
-            id="expirationDate"
-            class="form__input"
+            class="form-modal__input form-modal__input--expiration-date"
             required
           />
         </div>
-        <div class="form__group">
-          <label for="quantity">Quantity</label>
+        <div class="form-modal__group">
+          <label class="form-modal__label" for="quantity">Quantity</label>
           <input
             type="number"
             name="quantity"
-            id="quantity"
+            class="form-modal__input form-modal__input--quantity"
             placeholder="Enter available quantity"
             min="1"
-            class="form__input"
             required
           />
         </div>
-        <button type="submit" class="form__submit-button">Add Medicine</button>
-        <button type="button" class="form__cancel-button">Cancel</button>
+        <button type="submit" class="form-modal__submit-button">
+          Add Medicine
+        </button>
+        <button type="button" class="form-modal__cancel-button">Cancel</button>
       </form>
     </div>
 

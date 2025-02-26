@@ -1,31 +1,23 @@
+/* Define CSS Variables */
 :root {
-  /* COLORS */
-  --color-background: #deab90;
-  --color-note-container: #774936;
-  --color-note-background: #e7f2f8;
-  --color-card-header: #120b0767;
-  --color-note-buttons: #e7f2f8;
-  --color-submit-buttons: #ffe8d6;
-  --color-primaryr-light: #fff;
-  --color-primaryr-dark: #000;
-  --color-starwars: #ffe81f;
-
-  /* SPACING */
-  --spacing-x-small: 0.25rem;
-  --spacing-small: 0.5rem;
-  --spacing-medium: 1rem;
-  --spacing-large: 1.5rem;
-  --spacing-x-large: 2rem;
-  --spacing-xx-large: 3rem;
-
-  /* FONT SIZE */
-  --font-size-small: 0.5rem;
+  --primary-color: #27ae60;
+  --primary-color-hover: #2ecc71;
+  --secondary-color: #e74c3c;
+  --secondary-color-hover: #c0392b;
+  --background-color: #f4f4f4;
+  --header-background-color: #2c3e50;
+  --text-color: #333;
+  --input-border-color: #ccc;
+  --input-focus-border-color: #2c3e50;
+  --modal-background-color: #ffffff;
+  --modal-overlay-color: rgba(0, 0, 0, 0.5);
+  --table-header-background-color: #34495e;
+  --table-row-hover-color: #bdc3c7;
+  --table-row-alternate-background-color: #ecf0f1;
+  --button-padding: 10px 20px;
   --font-size-base: 1rem;
-  --font-size-medium: 1.2rem;
-  --font-size-large: 1.5rem;
-  --font-size-x-large: 2rem;
-
-  /* BORDER RADIUS */
-  --border-radius-small: 0.25rem;
-  --border-radius-medium: 0.5rem;
+  --font-size-heading: 1.8rem;
+  --font-size-small: 0.875rem;
+  --border-radius: 5px;
+  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
