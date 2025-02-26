@@ -1,5 +1,6 @@
 /* Define CSS Variables */
 :root {
+  /* colors */
   --primary-color: #27ae60;
   --primary-color-hover: #2ecc71;
   --secondary-color: #e74c3c;
@@ -14,10 +15,13 @@
   --table-header-background-color: #34495e;
   --table-row-hover-color: #bdc3c7;
   --table-row-alternate-background-color: #ecf0f1;
+  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* button */
   --button-padding: 10px 20px;
+  /* font size */
   --font-size-base: 1rem;
   --font-size-heading: 1.8rem;
   --font-size-small: 0.875rem;
+  /* border */
   --border-radius: 5px;
-  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
