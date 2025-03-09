@@ -1,40 +1,29 @@
-import medicine from "./medicine.js";
+import Medicine from "./medicine.js";
+import Ui from "./ui.js";
 
 class MedicineManager {
   static medicinesCollection =
     JSON.parse(localStorage.getItem("medicines-collection")) || [];
 
   // Add new medicine
-  static addMedicine(
-    name,
-    manufacturer,
-    expirationDate,
-    medicineType,
-    dosage,
-    volume
-  ) {
+  static addMedicine(name, manufacturer, expirationDate, quantity) {
     const latestMedicineCollection =
       JSON.parse(localStorage.getItem("medicines-collection")) || [];
+
     let medicine;
-    if (medicineType === "tablet") {
-      medicine = new Medicine(
-        name,
-        manufacturer,
-        new Date(expirationDate),
-        medicineType,
-        dosage
-      );
-    } else if (medicineType === "liquid") {
-      medicine = new Medicine(
-        name,
-        manufacturer,
-        new Date(expirationDate),
-        medicineType,
-        dosage,
-        volume
-      );
+
+    const existingMedicine = latestMedicineCollection.find(
+      (medicine) =>
+        medicine.name === name &&
+        medicine.manufacturer === manufacturer &&
+        medicine.expirationDate === expirationDate
+    );
+    if (existingMedicine) {
+      existingMedicine.quantity += parseInt(quantity, 10);
+    } else {
+      medicine = new Medicine(name, manufacturer, expirationDate, quantity);
+      latestMedicineCollection.push(medicine);
     }
-    latestMedicineCollection.push(medicine);
     this.storeMedicines(latestMedicineCollection);
     MedicineManager.medicinesCollection = latestMedicineCollection;
   }
@@ -53,22 +42,16 @@ class MedicineManager {
       localStorage.getItem("medicines-collection")
     );
     MedicineManager.medicinesCollection = latestCollection.filter(
-      (medicine) => medicine.id !== id
+      (medicine) => {
+        return medicine.id !== id;
+      }
     );
     MedicineManager.storeMedicines(MedicineManager.medicinesCollection);
     Ui.renderMedicines();
   }
 
   // render medicine
-  static updateMedicine(
-    id,
-    name,
-    manufacturer,
-    expirationDate,
-    medicineType,
-    dosage,
-    volume
-  ) {
+  static updateMedicine(id, name, manufacturer, expirationDate, quantity) {
     const latestCollection = JSON.parse(
       localStorage.getItem("medicines-collection")
     );
@@ -80,10 +63,8 @@ class MedicineManager {
         id,
         name,
         manufacturer,
-        expirationDate: new Date(expirationDate),
-        medicineType,
-        dosage,
-        volume,
+        expirationDate,
+        quantity,
       };
     }
     MedicineManager.storeMedicines(latestCollection);

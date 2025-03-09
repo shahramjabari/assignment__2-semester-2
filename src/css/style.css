@@ -246,6 +246,6 @@ h2 {
   color: white;
 }
 
-.delete-modal__cancel-button:hover {
-  background-color: #95a5a6;
+.display-add-medicine {
+  display: flex;
 }

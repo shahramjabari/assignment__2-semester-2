@@ -7,15 +7,14 @@
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/variables.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/validation.css" />
     <title>Vite App</title>
   </head>
   <body>
-    <!-- Structure for header -->
     <header class="header">
       <h1 class="header__title">Pharmacy Inventory Management System</h1>
     </header>
 
-    <!-- Main structure -->
     <main class="main">
       <div class="inventory-container">
         <div class="inventory-container__tools">
@@ -42,15 +41,12 @@
                 <th class="inventory-table__header">Actions</th>
               </tr>
             </thead>
-            <tbody class="inventory-table__body">
-              <!-- Medicine items will be dynamically added here -->
-            </tbody>
+            <tbody class="inventory-table__body"></tbody>
           </table>
         </div>
       </div>
     </main>
 
-    <!-- Structure for the form -->
     <div class="form-modal">
       <form class="form-modal__form">
         <div class="form-modal__group">
@@ -60,7 +56,7 @@
           <input
             type="text"
             name="productName"
-            class="form-modal__input form-modal__input--product-name"
+            class="form-modal__input form-modal__input--medicine-name"
             placeholder="Enter medicine name"
             maxlength="100"
             required
@@ -101,14 +97,21 @@
             required
           />
         </div>
-        <button type="submit" class="form-modal__submit-button">
-          Add Medicine
-        </button>
-        <button type="button" class="form-modal__cancel-button">Cancel</button>
+        <p class="validation-message"></p>
+        <div class="add-medicine__button-cotainer">
+          <button type="submit" class="form-modal__submit-button">
+            Add Medicine
+          </button>
+          <button type="button" class="form-modal__cancel-button">
+            Cancel
+          </button>
+          <button type="button" class="add-medicine__close-button">
+            Close
+          </button>
+        </div>
       </form>
     </div>
 
-    <!-- Structure for delete modal -->
     <div class="delete-modal">
       <div class="delete-modal__container">
         <p class="delete-modal__text"></p>
