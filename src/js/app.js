@@ -10,7 +10,7 @@ const addMedicineButton = document.querySelector(
 const formSubmitButton = document.querySelector(".form-modal__submit-button");
 
 const closeMedicineModalButton = document.querySelector(
-  ".add-medicine__close-button"
+  ".form-modal__cancel-button"
 );
 
 // Selecting form inputs
@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (!Validation.validateForm(validationMessage)) {
-    return;
-  }
+  // if (!Validation.validateForm(validationMessage)) {
+  //   return;
+  // }
 
   if (!Ui.currentEditId) {
     MedicineManager.addMedicine(
@@ -54,7 +54,7 @@ form.addEventListener("submit", (e) => {
     );
     Ui.renderMedicines();
   } else {
-    MedicineManager.editMedicine(
+    MedicineManager.updateMedicine(
       Ui.currentEditId,
       name.value.trim(),
       manufacturer.value.trim(),
