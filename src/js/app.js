@@ -1,6 +1,7 @@
 import Medicine from "./medicine.js";
 import MedicineManager from "./medicineManager.js";
 import Ui from "./ui.js";
+import Validation from "./validation.js";
 
 // Selecting dom elements
 const medicineModal = document.querySelector(".form-modal");
@@ -40,11 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  // if (!Validation.validateForm(validationMessage)) {
-  //   return;
-  // }
-
+  if (!Validation.validationFormMessage(validationMessage)) {
+    return;
+  }
   if (!Ui.currentEditId) {
     MedicineManager.addMedicine(
       name.value.trim(),
