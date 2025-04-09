@@ -48,8 +48,11 @@
 }
 
 .delete-modal__cancel-button {
-  background-color: var(--input-border-color);
+  background-color: var(--primary-color-hover);
   color: var(--background-color);
+}
+.delete-modal__cancel-button:hover {
+  background-color: var(--primary-color);
 }
 
 .display-add-medicine {
@@ -132,7 +135,6 @@
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-/* Rediger-knapp (Blå) */
 .edit-button {
   background-color: var(--edit-button-color, #007bff);
   color: var(--background-color);
@@ -143,7 +145,6 @@
   transform: scale(1.05);
 }
 
-/* Slett-knapp (Rød) */
 .delete-button {
   background-color: var(--delete-button-color, var(--secondary-color));
   color: var(--background-color);

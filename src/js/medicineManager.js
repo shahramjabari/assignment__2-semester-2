@@ -1,6 +1,5 @@
 import Medicine from "./medicine.js";
 import Ui from "./ui.js";
-
 class MedicineManager {
   static medicinesCollection =
     JSON.parse(localStorage.getItem("medicines-collection")) || [];

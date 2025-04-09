@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   Ui.closeAddMedicineModal(closeMedicineModalButton, medicineModal);
   Ui.closeDeleteModal();
   Ui.renderMedicines();
+  Validation.initializeValidation(validationMessage);
 });
 
 form.addEventListener("submit", (e) => {
