@@ -19,8 +19,8 @@ h2 {
 }
 
 .header__title {
-  font-size: var(--font-size-heading);
-  margin-bottom: 0;
+  color: var(--background-color);
+  font-weight: bold;
 }
 
 /* Main container and inventory section */
@@ -188,4 +188,7 @@ h2 {
 .form-modal__submit-button,
 .form-modal__cancel-button {
   margin-top: 10px;
+}
+.form__invalid-input {
+  border: 2px solid red;
 }

@@ -1,22 +1,9 @@
 class Validation {
-  // Define the array globally within the class
   static fields = [
-    {
-      name: "medicine-name",
-      message: "Please enter medicine name",
-    },
-    {
-      name: "manufacturer",
-      message: "Please enter manufacture name",
-    },
-    {
-      name: "expiration-date",
-      message: "Please enter expiration date",
-    },
-    {
-      name: "quantity",
-      message: "Please enter an amount of medicines",
-    },
+    { name: "medicine-name", message: "Please enter medicine name" },
+    { name: "manufacturer", message: "Please enter manufacture name" },
+    { name: "expiration-date", message: "Please enter expiration date" },
+    { name: "quantity", message: "Please enter an amount of medicines" },
   ];
 
   static initializeValidation(validationMessage) {
@@ -29,6 +16,7 @@ class Validation {
         inputField.addEventListener("input", () => {
           inputField.classList.remove("form__invalid-input");
           validationMessage.textContent = "";
+          validationMessage.style.display = "none";
         });
       }
     });
@@ -41,15 +29,16 @@ class Validation {
       );
 
       validationMessage.textContent = "";
+      validationMessage.style.display = "none";
 
       if (inputField && !inputField.value.trim()) {
         validationMessage.style.display = "block";
+        validationMessage.style.color = "red";
         validationMessage.textContent = field.message;
         inputField.classList.add("form__invalid-input");
         return false;
       }
     }
-
     return true;
   }
 }
